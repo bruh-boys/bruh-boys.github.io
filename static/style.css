@@ -2,7 +2,7 @@
   --background-color: #fff;
   --text-color: #000000;
   --contribuitor-color: rgb(177, 177, 177);
-  --button-background-color: #7289da;
+  --button-background-color: #333;
   --button-text-color: #fff;
   --button-background-hover: #000;
 }
@@ -10,82 +10,72 @@
   border-color: #000000;
 }
 body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: var(--background-color);
-  text-align: center;
   color: var(--text-color);
-
-  font-family: sans-serif;
-  top: 0;
+  font-family: sans-serif
 }
 [data-theme="dark"] {
   --background-color: #23272a;
   --text-color: #fff;
-  --button-background-color: rgb(6, 0, 26);
+  --button-background-color: #dcdcdc;
   --contribuitor-color: rgb(56, 56, 56);
-  --button-text-color: #fff;
+  --button-text-color: black;
   --button-background-hover: #7289da;
 }
 
-.linkNav {
-  border: 1px solid #000;
-
-  float: left;
-
-  height: 40.923132px;
-  width: 30%;
-  text-align: center;
-}
-
-.linkNav a {
-  color: rgb(255, 255, 255);
-  padding-bottom: 30px;
-}
-
-.linkNav:hover {
-  color: #000;
-  background-color: rgb(40, 205, 255);
-}
-.contribuitors {
-  text-align: center;
-  border-radius: 1px;
-  margin: auto;
-  display: inline-block;
-}
-.contribuitors * {
-  margin: auto;
-  text-decoration: none;
-}
-.contribuitors img {
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 5px;
-  width: 150px;
-  margin: auto;
-  border-radius: 5px;
-  display:inline-block;
-}
-button {
-  background-color: var(--button-background-color);
-  margin: 0;
-  position: absolute;
-  top: 200%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
+.btn {
+  width: 15%;
+  padding: 20px;
   border: none;
-  color: var(--button-text-color);
-  padding: 15px 32px;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
   border-radius: 10px;
-  float: right;
-}
-button:hover {
-  align-content: center;
+  outline: none;
+  font-size: 20px;
+  margin: 20px;
+  background-color: var(--button-background-color);
   color: var(--button-text-color);
-  background-color: var(--button-background-hover);
 }
-theme-switcher{
+
+.people {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.people__title {
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-size: 33px;
+}
+
+.people__cards {
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr)
+}
+
+.people__card {
+  display: block;
+  width: 200px;
+  text-decoration: none;
+}
+
+.people__card-content {
+  width: 100%;
+}
+
+.people__card-content img {
+  width: 100%;
+}
+
+.people__card-content h3 {
+  color: var(--text-color);
   text-align: center;
+  font-size: 25px;
+  letter-spacing: 1px;
+  font-weight: 400;
 }
