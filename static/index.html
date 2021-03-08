@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width-device-width, initial-scale=1.0" />
+    <title>bruh-boys</title>
+    <link rel="stylesheet" href="style1.css" />
+    <link
+      rel="shortcut icon"
+      href="https://avatars.githubusercontent.com/u/76717008?s=60&v=4"
+      type="image/x-icon"
+    />
+    <script type="text/javascript">
+      // Wait for document to load
+      document.addEventListener("DOMContentLoaded", function (event) {
+        document.documentElement.setAttribute("data-theme", "light");
+
+        // Get our button switcher
+        var themeSwitcher = document.getElementById("theme-switcher");
+
+        // When our button gets clicked
+        themeSwitcher.onclick = function () {
+          // Get the current selected theme, on the first run
+          // it should be `light`
+          var currentTheme = document.documentElement.getAttribute(
+            "data-theme"
+          );
+
+          // Switch between `dark` and `light`
+          var switchToTheme = currentTheme === "dark" ? "light" : "dark";
+
+          // Set our currenet theme to the new one
+          document.documentElement.setAttribute("data-theme", switchToTheme);
+        };
+      });
+    </script>
+  </head>
+  <body>
+    <button id="theme-switcher">Switch themes</button>
+    <div id="people" align="center">
+      <h1>contribuitors</h1>
+      <a href="https://github.com/ELPanaJose">
+        <div class="contribuitors">
+          <h1>ElPanaJose</h1>
+          <img
+            src="https://avatars.githubusercontent.com/u/69026987?s=460&u=5be368091b48596e0baa6de0f9f52c961de2cfd5&v=4"
+          />
+        </div>
+
+          <a href="https://github.com/ranon-rat">
+        <div class="contribuitors">
+          <h1>ranon-rat</h1>
+          <img
+            src="https://avatars.githubusercontent.com/u/66473662?s=400&u=5965fe3460c12559ff84ff5b5c9ef586760b22e4&v=4"
+          />
+        </div>
+
+           <a href="https://github.com/yOn3l">
+        <div class="contribuitors">
+          <h1>yOn3l</h1>
+          <img
+            src="https://avatars.githubusercontent.com/u/74076866?s=460&u=48cd0f91724265d22d55f0dbe3fd9999d766cea6&v=4"
+          />
+        </div>
+
+          <a href="https://github.com/nerdthatnoonelikes">
+        <div class="contribuitors">
+          <h1>nerdthatnoonelikes</h1>
+          <img
+            src="https://avatars.githubusercontent.com/u/33642056?s=96&v=4"
+          />
+        </div>
+
+      </a>
+      <a href="https://github.com/RodrigoAlanisWeb">
+        <div class="contribuitors">
+          <h1>ArkSebastian</h1>
+          <img
+            src="https://images-ext-1.discordapp.net/external/bdgY794AMUFbaCBd3kLTPzOo3CYrwl7nyd5ls2UBsjc/%3Fsize%3D256/https/cdn.discordapp.com/avatars/754124314512457769/c6045bee7f8f6db26f37634a6807815e.png"
+          />
+        </div>
+      </a>
+    </div>
+  </body>
+</html>
