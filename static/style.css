@@ -91,6 +91,10 @@ body {
   font-weight: 400;
 }
 
+.people__card:last-child {
+  grid-column: 1 / 6;
+}
+
 @media screen and (max-width: 1200px) {
   .people__cards {
     width: 90%;
