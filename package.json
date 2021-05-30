@@ -1,19 +1,45 @@
 {
-  "name": "peo",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start:dev": "nodemon index.js",
-    "start": "node index.js"
+  "author": {
+    "name": "FlamesX-128",
+    "url": "https://github.com/FlamesX-128"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "bugs": {
+    "type": "git",
+    "url": "https://github.com/FlamesX-128/Bruh_Boys_Website/issues"
+  },
+  "contributors": [
+    {
+      "name": "ranon-rat",
+      "url": "https://github.com/ranon-rat"
+    }
+  ],
   "dependencies": {
-    "express": "^4.17.1"
+    "core-js": "^3.6.5",
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.0-0",
+    "vuex": "^4.0.0-0"
   },
+  "description": "A little improvement to the \"bruh boys\" website",
   "devDependencies": {
-    "nodemon": "^2.0.7"
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0"
+  },
+  "keywords": [
+    "bruh boys",
+    "bruh boys website"
+  ],
+  "license": "none",
+  "name": "bruh_boys_website",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FlamesX-128/Bruh_Boys_Website"
+  },
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
   }
 }
