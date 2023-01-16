@@ -4,20 +4,25 @@ import axios from "axios";
 export default {
   data() {
     return {
-      contributors: new Set(),
+      uniqueContributors: new Set(),
     };
   },
-  created() {
+  mounted() {
     axios
-      .get(`https://api.github.com/orgs/bruh-boys/repos?per_page=1000`)
+      .get("https://api.github.com/orgs/bruh-boys/repos", {
+        headers: {
+          Authorization: "Bearer <token>",
+        },
+      })
       .then((response) => {
-        response.data.forEach((repo) => {
-          axios.get(repo.contributors_url).then((response) => {
-            response.data.forEach((contributor) => {
-              this.contributors.add(contributor);
-            });
+        const repos = response.data;
+        for (let i = 0; i < repos.length; i++) {
+          axios.get(repos[i].contributors_url).then((response) => {
+            for (let j = 0; j < response.data.length; j++) {
+              this.uniqueContributors.add(response.data[j].login);
+            }
           });
-        });
+        }
       });
   },
 };
@@ -25,11 +30,23 @@ export default {
 
 <template>
   <div>
-    <h1>Contribuidores de la organización</h1>
-    <ul>
-      <li v-for="contributor in contributors" :key="contributor.login">
-        {{ contributor.login }}
-      </li>
-    </ul>
+    <div class="flex flex-wrap m-5">
+      <div
+        v-for="contributor in uniqueContributors"
+        :key="contributor"
+        class="w-full sm:w-1/2 lg:w-1/4 p-5"
+      >
+        <div class="bg-white rounded-md shadow-md">
+          <img
+            class="h-32 w32 rounded-full mx-auto"
+            :src="`https://avatars.githubusercontent.com/${contributor}`"
+            alt="Profile image of {{contributor}}"
+          />
+          <div class="p-5">
+            <h3 class="text-center text-lg font-medium">{{ contributor }}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
