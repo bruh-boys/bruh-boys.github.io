@@ -9,11 +9,7 @@ export default {
   },
   mounted() {
     axios
-      .get("https://api.github.com/orgs/bruh-boys/repos", {
-        headers: {
-          Authorization: "Bearer <token>",
-        },
-      })
+      .get("https://api.github.com/orgs/bruh-boys/repos")
       .then((response) => {
         const repos = response.data;
         for (let i = 0; i < repos.length; i++) {
