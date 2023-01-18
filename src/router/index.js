@@ -36,11 +36,10 @@ const router = createRouter({
 });
 
 router.beforeEach(function (to, from, next) {
-  const routes = router.options.routes.map((route) => route.path);
-  if (!routes.includes(to.path)) {
-    return next({ path: "/404" });
-  }
-  next();
+  if (router.options.routes.find((route) => route.path === to.path))
+    return next();
+
+  next({ path: "/404" });
 });
 
 export default router;
