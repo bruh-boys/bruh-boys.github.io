@@ -33,8 +33,7 @@ export default {
           <h2 class="text-lg font-medium mb-2">{{ project.name }}</h2>
           <p class="text-gray-600">{{ project.description }}</p>
           <div class="mt-4">
-            <a :href="project.url" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">See project</a>
-          </div>
+            <a :href="project.html_url" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">See project</a>          </div>
         </div>
       </div>
     </div>
